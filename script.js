@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const allBlownOut = candles.every(candle => candle.classList.contains("out"));
     if (allBlownOut) {
       if (check===0){
-      window.open("flower.html", "_blank");  // Replace with your URL
+      window.location.href ="https://nganngoanxinhiu.vercel.app/flower.html"  // Replace with your URL
       check=1
       }
     }
