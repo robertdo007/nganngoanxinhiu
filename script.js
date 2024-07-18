@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function addCandle(left, top) {
     
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 10; i++) {
     const candle = document.createElement("div");
     candle.className = "candle";
     candle.style.left = left + "px";
