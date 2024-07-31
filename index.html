@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Ngân Xikiu</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
-    />
-    <link rel="stylesheet" href="./style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-  </head>
-  <body>
-    <div class="candle-count-display">
-      ngân nhớ thổi mạnh vô nhaa</span>
-    </div>
-    <div class="cake">
-      <div class="plate"></div>
-      <div class="layer layer-bottom"></div>
-      <div class="layer layer-middle"></div>
-      <div class="layer layer-top"></div>
-      <div class="icing"></div>
-      <div class="drip drip1"></div>
-      <div class="drip drip2"></div>
-      <div class="drip drip3"></div>
-    </div>
-    
-    <script src="script.js"></script>
-  </body>
+    <head>
+        <link rel="stylesheet" href="style.css"> 
+    </head>
+    <body>
+        <div class="container">
+            <div>
+                <h1 class="header_text">Chị Ngân đã FA chưaaa??</h1>
+            </div>
+            <div class="gif_container">
+              <img src="https://media.giphy.com/media/d6Knl7IbYdfbqJfoYd/giphy.gif?cid=ecf05e47mlkqdnbjvhiznmjo9s539nwathwn6hygoz0idxyz&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="cute animated illustration">
+            </div>
+            <div class="buttons">
+                <button class="btn" id="yesButton" onClick="nextPage()">Rồiii</button>
+                <button class= "btn" id="noButton" onmouseover="moveButton()" onClick="moveButton()">Chưa</button>
+                <script>
+                    function nextPage() {
+                        window.location.href = "yes.html";
+                    }
+
+                    function moveButton() {
+                        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
+                        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
+                        document.getElementById('noButton').style.left = `${x}px`;
+                        document.getElementById('noButton').style.top = `${y}px`;
+                    }
+                </script>
+            </div>
+        </div>
+
+    </body>
 </html>

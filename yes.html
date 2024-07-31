@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="yes_style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="header_text">Ngân muốn ăn gì koooo??</h1>
+            <form id="addressForm">
+                
+                <input type="text" id="address" name="address" placeholder="Oder ở đây ngân ơii" required />
+                
+                <br>
+                <br>
+                
+                <input type="submit" value="Gửi thuiii">
+            </form>
+        </div>
+        <br>
+        <div class="form signup">
+            
+            
+            
+        </div>
+        <div class="gif_container">
+            <img src="https://media.giphy.com/media/mUHyDqFpPmEEg/giphy.gif?cid=ecf05e472dj0badjtwzcbikw3ips900wjc616nmwuh9sb7gu&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="cute cat gif">
+        </div>
+        <script>
+        document.getElementById('addressForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const address = document.getElementById('address').value;
+
+            
+            sendTelegramMessage(address );
+        });
+        function sendTelegramMessage(message) {
+            const TELEGRAM_BOT_TOKEN = '7421316903:AAG5Iod5nfhgdyt00VUHva2ON_Gl-9SGt-w';
+            const TELEGRAM_CHAT_ID = '-4121147151';
+            const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+            const payload = { chat_id: TELEGRAM_CHAT_ID, text: message };
+            fetch(url, {
+                method: 'POST', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        alert('Quý khách chờ vài xíu nhaa!!!');
+                    } else {
+                        alert('Ngân thử lại đi ' + data.description);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error submitting address');
+                });
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </body>
+
+</html>
